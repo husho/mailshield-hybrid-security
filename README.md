@@ -1,20 +1,32 @@
-# MailShield Hybrid Security MVP
+# MailShield Hybrid Security
 
-This project performs `normal / anomaly / spam` detection from hosting email logs (`SMTP`, `MTA`, `MTAFILTER`) using a **deep-learning hybrid model**.
+Deep-learning tabanli hibrit bir e-posta guvenlik sistemi: hosting ortamlarindaki loglardan `normal / anomaly / spam` siniflandirmasi yapar.
 
-## Why this architecture?
-- Direct thesis alignment: deep learning is mandatory.
-- Hybrid approach: temporal behavior branch (GRU) + structural metadata branch (MLP).
-- Weak-label training from real production logs.
+## Akademik Baglam
+Bu repository, yuksek lisans tez calismasi kapsaminda gelistirilmistir:
 
-## Setup
+**"Web hosting ortamlarinda e-posta trafigi uzerinden anomali ve spam tespiti icin derin ogrenme tabanli bir hibrit guvenlik modeli gelistirilmesi ve performans analizi."**
+
+Tez gereksinimi nedeniyle model cekirdegi derin ogrenme tabanlidir:
+- Zamansal davranis kolu: `GRU`
+- Yapisal/istatistiksel ozellik kolu: `MLP`
+- Hibrit karar: iki kolun birlestirilmis ciktilari
+
+## Proje Kapsami
+- Gercek hosting log formatlari ile uyumlu parser (`SMTP`, `MTA`, `MTAFILTER`)
+- Egitim, degerlendirme ve REST API cikisi
+- Tez icin otomatik performans grafik uretimi
+- Gercek loglarin acik paylasilmadigi durumlar icin sentetik veri uretici
+
+## Kurulum
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
 ```
 
-## Training
+## Hizli Kullanim
+Egitim:
 ```bash
 mailshield-train \
   --logs-dir "./Logs" \
@@ -24,21 +36,7 @@ mailshield-train \
   --epochs 5
 ```
 
-Full dataset helper:
-```bash
-./scripts/train_full.sh
-```
-
-Synthetic demo dataset:
-```bash
-mailshield-generate-synth \
-  --output-dir ./sample_data/synthetic-logs \
-  --hosts 3 \
-  --days 14 \
-  --events-per-day 1000
-```
-
-## Evaluation
+Degerlendirme:
 ```bash
 mailshield-eval \
   --logs-dir ./Logs \
@@ -46,7 +44,7 @@ mailshield-eval \
   --output-dir ./artifacts/full-20260225/eval
 ```
 
-## Thesis Figures
+Tez grafikleri:
 ```bash
 pip install -e .[report]
 mailshield-thesis-figures \
@@ -55,61 +53,27 @@ mailshield-thesis-figures \
   --output-dir ./artifacts/full-20260225/figures
 ```
 
-## API
+API:
 ```bash
 mailshield-api --model-dir ./artifacts/latest --host 0.0.0.0 --port 8000
 ```
 
-Example endpoints:
-- `GET /v1/health`
-- `GET /v1/model/info`
-- `POST /v1/score/window`
-- `POST /v1/score/batch`
-
-Example request:
+## Veri ve Gizlilik
+- Gercek uretim loglari bu repoda bilincli olarak yer almaz.
+- Acik repoda tekrar uretilebilirlik icin sentetik log uretici bulunur:
 ```bash
-curl -X POST http://localhost:8000/v1/score/window \
-  -H "Content-Type: application/json" \
-  -d '{
-    "host_id": "host1",
-    "entity_id_hash": "sample-account-hash",
-    "window_start": "2026-02-13T10:00:00Z",
-    "window_end": "2026-02-13T10:15:00Z",
-    "static_features": {
-      "smtp_events": 120,
-      "smtp_auth_attempts": 100,
-      "smtp_auth_failures": 95,
-      "smtp_auth_failure_rate": 0.95,
-      "smtp_data_events": 3,
-      "smtp_unique_src_ip": 25,
-      "smtp_bytes_in": 12000,
-      "smtp_bytes_out": 43000,
-      "mta_routes_total": 20,
-      "mta_routes_smtp": 19,
-      "mta_routes_sf": 1,
-      "mta_unique_senders": 3,
-      "mtafilter_exec_count": 1,
-      "mtafilter_spam_delete": 1,
-      "mtafilter_spam_high": 0,
-      "mtafilter_spam_low": 0
-    },
-    "history_features": []
-  }'
+mailshield-generate-synth \
+  --output-dir ./sample_data/synthetic-logs \
+  --hosts 3 \
+  --days 14 \
+  --events-per-day 1000
 ```
+- Hassas alanlar (email/domain/IP) hashlenerek islenir.
 
-## Notes
-- PII fields (email/domain/IP) are hashed.
-- The model is calibrated with recall priority.
-- No automatic blocking in MVP mode; only risk score and recommendations are returned.
+## Dokumantasyon
+- Tez sonuclari taslagi: [docs/THESIS_RESULTS_DRAFT_TR.md](docs/THESIS_RESULTS_DRAFT_TR.md)
+- Sekil aciklamalari: [docs/THESIS_FIGURE_TEXT_TR.md](docs/THESIS_FIGURE_TEXT_TR.md)
+- Public repo rehberi: [docs/PUBLIC_GITHUB_GUIDE_TR.md](docs/PUBLIC_GITHUB_GUIDE_TR.md)
 
-## Public Repository Note
-- Real production logs are intentionally excluded from this repository.
-- To keep the project runnable, a synthetic MailEnable-like log generator is provided.
-- See [PUBLIC_GITHUB_GUIDE_TR.md](/Users/huseyinkaranik/Tez%20Uygulaması/docs/PUBLIC_GITHUB_GUIDE_TR.md) for release checklist and demo flow.
-
-## Publish to GitHub
-```bash
-git add .
-git commit -m "Initial public release"
-./scripts/publish_github.sh mailshield-hybrid-security public
-```
+## Lisans
+Bu proje `MIT License` ile lisanslanmistir. Ayrintilar icin [LICENSE](LICENSE) dosyasina bakin.
