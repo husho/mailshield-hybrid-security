@@ -20,12 +20,14 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.2.0", "ruff>=0.6.0", "httpx>=0.28.0"]
+report = ["matplotlib>=3.9.0"]
 
 [project.scripts]
 mailshield-train = "hybrid_mailsec.train:main"
 mailshield-api = "hybrid_mailsec.api:main"
 mailshield-eval = "hybrid_mailsec.evaluate:main"
 mailshield-generate-synth = "hybrid_mailsec.synthetic:main"
+mailshield-thesis-figures = "hybrid_mailsec.thesis_figures:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

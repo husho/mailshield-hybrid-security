@@ -46,6 +46,15 @@ mailshield-eval \
   --output-dir ./artifacts/full-20260225/eval
 ```
 
+## Thesis Figures
+```bash
+pip install -e .[report]
+mailshield-thesis-figures \
+  --eval-dir ./artifacts/full-20260225/eval-xgb \
+  --train-summary ./artifacts/full-20260225/training_summary.json \
+  --output-dir ./artifacts/full-20260225/figures
+```
+
 ## API
 ```bash
 mailshield-api --model-dir ./artifacts/latest --host 0.0.0.0 --port 8000
