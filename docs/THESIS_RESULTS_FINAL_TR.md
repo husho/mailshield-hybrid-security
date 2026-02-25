@@ -1,4 +1,4 @@
-# Deneysel Sonuclar ve Karsilastirmali Analiz (Taslak)
+# Deneysel Sonuclar ve Karsilastirmali Analiz (Final)
 
 ## Deneysel Kurulum
 Bu calismada onerilen model, e-posta trafiginin zamansal davranis oruntulerini ve yapisal metaveri ozelliklerini birlikte isleyen derin ogrenme tabanli hibrit bir mimari olarak gelistirilmistir. Modelin zamansal kolunda GRU katmani, yapisal kolunda tam baglantili sinir agi kullanilmis ve bu iki kol birlestirilerek uc sinifli (normal, anomaly, spam) karar uretimi yapilmistir.

@@ -71,9 +71,14 @@ mailshield-generate-synth \
 - Hassas alanlar (email/domain/IP) hashlenerek islenir.
 
 ## Dokumantasyon
-- Tez sonuclari taslagi: [docs/THESIS_RESULTS_DRAFT_TR.md](docs/THESIS_RESULTS_DRAFT_TR.md)
-- Sekil aciklamalari: [docs/THESIS_FIGURE_TEXT_TR.md](docs/THESIS_FIGURE_TEXT_TR.md)
-- Public repo rehberi: [docs/PUBLIC_GITHUB_GUIDE_TR.md](docs/PUBLIC_GITHUB_GUIDE_TR.md)
+- Tez sonuclari (TR): [docs/THESIS_RESULTS_FINAL_TR.md](docs/THESIS_RESULTS_FINAL_TR.md)
+- Thesis results (EN): [docs/THESIS_RESULTS_FINAL_EN.md](docs/THESIS_RESULTS_FINAL_EN.md)
+- Sekil aciklamalari (TR): [docs/THESIS_FIGURE_TEXT_FINAL_TR.md](docs/THESIS_FIGURE_TEXT_FINAL_TR.md)
+- Figure captions (EN): [docs/THESIS_FIGURE_TEXT_FINAL_EN.md](docs/THESIS_FIGURE_TEXT_FINAL_EN.md)
+- Tez tamamlama plani (TR): [docs/THESIS_COMPLETION_PLAN_TR.md](docs/THESIS_COMPLETION_PLAN_TR.md)
+- Thesis completion plan (EN): [docs/THESIS_COMPLETION_PLAN_EN.md](docs/THESIS_COMPLETION_PLAN_EN.md)
+- Public repo rehberi (TR): [docs/PUBLIC_GITHUB_GUIDE_TR.md](docs/PUBLIC_GITHUB_GUIDE_TR.md)
+- Public release guide (EN): [docs/PUBLIC_GITHUB_GUIDE_EN.md](docs/PUBLIC_GITHUB_GUIDE_EN.md)
 
 ## Lisans
 Bu proje `MIT License` ile lisanslanmistir. Ayrintilar icin [LICENSE](LICENSE) dosyasina bakin.

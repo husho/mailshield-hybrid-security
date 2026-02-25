@@ -1,4 +1,4 @@
-# Tez Icin Sekil Metinleri ve Aciklama Taslagi
+# Tez Icin Sekil Metinleri ve Aciklama Metni (Final)
 
 Bu dokuman, uretilen performans grafiklerini tez metnine yerlestirirken kullanilacak ornek sekil aciklamalarini ve kisa yorumlarini icerir.
 
