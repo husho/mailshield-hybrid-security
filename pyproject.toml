@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mailshield-hybrid-sec"
+version = "0.1.0"
+description = "Deep-learning hybrid spam and anomaly detection for hosting email logs"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Huseyin Karanik" }]
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.30.0",
+  "pydantic>=2.8.0",
+  "numpy>=1.26.0",
+  "torch>=2.3.0",
+  "scikit-learn>=1.5.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2.0", "ruff>=0.6.0", "httpx>=0.28.0"]
+
+[project.scripts]
+mailshield-train = "hybrid_mailsec.train:main"
+mailshield-api = "hybrid_mailsec.api:main"
+mailshield-eval = "hybrid_mailsec.evaluate:main"
+mailshield-generate-synth = "hybrid_mailsec.synthetic:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

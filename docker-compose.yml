@@ -1,0 +1,10 @@
+services:
+  mailshield-api:
+    build: .
+    container_name: mailshield-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_DIR=/app/artifacts/latest
+    volumes:
+      - ./artifacts/latest:/app/artifacts/latest:ro
