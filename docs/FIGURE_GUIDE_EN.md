@@ -1,6 +1,6 @@
-# Figure Captions and Explanations for Thesis (Final)
+# Figure and Table Guide
 
-This document contains final figure caption templates and short interpretation texts for thesis integration.
+This document contains reusable figure/table caption templates and short interpretation texts for report or presentation use.
 
 Public assets:
 - Figures: `docs/figures/`

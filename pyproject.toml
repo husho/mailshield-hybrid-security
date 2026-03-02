@@ -27,7 +27,7 @@ mailshield-train = "hybrid_mailsec.train:main"
 mailshield-api = "hybrid_mailsec.api:main"
 mailshield-eval = "hybrid_mailsec.evaluate:main"
 mailshield-generate-synth = "hybrid_mailsec.synthetic:main"
-mailshield-thesis-figures = "hybrid_mailsec.thesis_figures:main"
+mailshield-report-figures = "hybrid_mailsec.report_figures:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -1,6 +1,6 @@
-# Tez Icin Sekil Metinleri ve Aciklama Metni (Final)
+# Sekil ve Tablo Aciklamalari
 
-Bu dokuman, uretilen performans grafiklerini tez metnine yerlestirirken kullanilacak ornek sekil aciklamalarini ve kisa yorumlarini icerir.
+Bu dokuman, uretilen performans gorselleri icin kullanilabilecek ornek sekil/tablo aciklamalarini ve kisa yorumlari icerir.
 
 Public gorseller:
 - Grafikler: `docs/figures/`
@@ -71,6 +71,6 @@ Dosya: `figures/fig_confusion_random_forest.png`
 Dosya: `figures/fig_confusion_xgboost.png`
 
 Onerilen aciklama:
-"Sekil 6 ve Sekil 7, klasik baseline modellerin hata dagilimlarini gostermektedir. Bu karsilastirma, tezde onerilen derin ogrenme tabanli hibrit modelin operasyonel hedeflerle (ozellikle anomaly yakalama) uyumunu tartismak icin kullanilmistir."
+"Sekil 6 ve Sekil 7, klasik baseline modellerin hata dagilimlarini gostermektedir. Bu karsilastirma, onerilen derin ogrenme tabanli hibrit modelin operasyonel hedeflerle (ozellikle anomaly yakalama) uyumunu tartismak icin kullanilmistir."
 
 ![Sekil 7](figures/fig_confusion_xgboost.png)

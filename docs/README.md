@@ -2,7 +2,7 @@
 
 Public-facing project documents included in this repository:
 
-- `THESIS_RESULTS_FINAL_EN.md`
-- `THESIS_RESULTS_FINAL_TR.md`
-- `THESIS_FIGURE_TEXT_FINAL_EN.md`
-- `THESIS_FIGURE_TEXT_FINAL_TR.md`
+- `RESULTS_EN.md`
+- `RESULTS_TR.md`
+- `FIGURE_GUIDE_EN.md`
+- `FIGURE_GUIDE_TR.md`

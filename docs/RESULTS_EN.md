@@ -51,7 +51,7 @@ Classical methods provide higher global precision/F1, while the proposed deep hy
 - RandomForest macro ROC-AUC: 0.9928
 - XGBoost macro ROC-AUC: 0.9992
 
-All models show strong discrimination capability. Since the thesis objective is threat miss reduction, anomaly/spam recall is treated as a primary model selection criterion.
+All models show strong discrimination capability. Since the operational objective is threat miss reduction, anomaly/spam recall is treated as a primary model selection criterion.
 
 ## Conclusion
 Findings indicate that the deep-learning hybrid approach is practically applicable for spam and anomaly detection in web hosting email environments. The proposed model improves early warning capacity through higher anomaly recall.

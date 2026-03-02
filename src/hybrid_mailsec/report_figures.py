@@ -13,7 +13,7 @@ LABELS = ["normal", "anomaly", "spam"]
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate thesis-ready figures from evaluation outputs")
+    parser = argparse.ArgumentParser(description="Generate report-ready figures from evaluation outputs")
     parser.add_argument("--eval-dir", type=Path, required=True)
     parser.add_argument("--train-summary", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)

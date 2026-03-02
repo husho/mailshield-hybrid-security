@@ -1,4 +1,4 @@
-# Deneysel Sonuclar ve Karsilastirmali Analiz (Final)
+# Deneysel Sonuclar ve Karsilastirmali Analiz
 
 ## Deneysel Kurulum
 Bu calismada onerilen model, e-posta trafiginin zamansal davranis oruntulerini ve yapisal metaveri ozelliklerini birlikte isleyen derin ogrenme tabanli hibrit bir mimari olarak gelistirilmistir. Modelin zamansal kolunda GRU katmani, yapisal kolunda tam baglantili sinir agi kullanilmis ve bu iki kol birlestirilerek uc sinifli (normal, anomaly, spam) karar uretimi yapilmistir.
@@ -51,8 +51,7 @@ Karsilastirma sonucunda klasik yontemlerin genel precision/F1 performansi yuksek
 - RandomForest macro ROC-AUC: 0.9928
 - XGBoost macro ROC-AUC: 0.9992
 
-ROC-AUC degerleri tum modellerin ayristirma gucunun yuksek oldugunu gostermektedir. Ancak tez kapsaminda oncelik recall odakli oldugundan, model seciminde sadece AUC/F1 degil, anomaly/spam recall metrikleri de belirleyici kabul edilmistir.
+ROC-AUC degerleri tum modellerin ayristirma gucunun yuksek oldugunu gostermektedir. Ancak uygulama kapsaminda oncelik recall odakli oldugundan, model seciminde sadece AUC/F1 degil, anomaly/spam recall metrikleri de belirleyici kabul edilmistir.
 
 ## Sonuc
 Elde edilen bulgular, web hosting e-posta ortamlarinda spam ve anomali tespiti icin derin ogrenme tabanli hibrit model yaklasiminin pratikte uygulanabilir oldugunu gostermektedir. Onerilen model, ozellikle anomaly sinifinda daha yuksek yakalama oranina ulasarak guvenlik operasyonlarinda erken uyari kapasitesini artirmaktadir.
-

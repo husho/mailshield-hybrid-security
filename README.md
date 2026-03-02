@@ -2,7 +2,7 @@
 
 MailShield Hybrid Security is a deep-learning based email security project for `normal / anomaly / spam` detection on web hosting email logs.
 
-It is structured as a research-oriented implementation and evaluation environment for hosting email security analytics.
+It is structured as an implementation and evaluation environment for hosting email security analytics.
 
 ## Architecture
 - Temporal branch: `GRU`
@@ -51,7 +51,7 @@ mailshield-api --model-dir ./artifacts/latest --host 0.0.0.0 --port 8000
 Generate evaluation/report figures:
 ```bash
 pip install -e .[report]
-mailshield-thesis-figures \
+mailshield-report-figures \
   --eval-dir ./artifacts/full-20260225/eval-xgb \
   --train-summary ./artifacts/full-20260225/training_summary.json \
   --output-dir ./artifacts/full-20260225/figures
@@ -70,10 +70,10 @@ mailshield-generate-synth \
 - Sensitive identifiers such as email, domain, and IP fields are processed in hashed form.
 
 ## Documentation
-- Results summary: [docs/THESIS_RESULTS_FINAL_EN.md](docs/THESIS_RESULTS_FINAL_EN.md)
-- Figure captions and interpretation notes: [docs/THESIS_FIGURE_TEXT_FINAL_EN.md](docs/THESIS_FIGURE_TEXT_FINAL_EN.md)
-- Turkish results summary: [docs/THESIS_RESULTS_FINAL_TR.md](docs/THESIS_RESULTS_FINAL_TR.md)
-- Turkish figure captions: [docs/THESIS_FIGURE_TEXT_FINAL_TR.md](docs/THESIS_FIGURE_TEXT_FINAL_TR.md)
+- Results summary: [docs/RESULTS_EN.md](docs/RESULTS_EN.md)
+- Figure and table guide: [docs/FIGURE_GUIDE_EN.md](docs/FIGURE_GUIDE_EN.md)
+- Turkish results summary: [docs/RESULTS_TR.md](docs/RESULTS_TR.md)
+- Turkish figure and table guide: [docs/FIGURE_GUIDE_TR.md](docs/FIGURE_GUIDE_TR.md)
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
