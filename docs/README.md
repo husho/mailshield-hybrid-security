@@ -1,6 +1,6 @@
 # Documentation Index
 
-Public-facing thesis documents included in this repository:
+Public-facing project documents included in this repository:
 
 - `THESIS_RESULTS_FINAL_EN.md`
 - `THESIS_RESULTS_FINAL_TR.md`

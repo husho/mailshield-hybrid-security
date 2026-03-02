@@ -2,7 +2,7 @@
 
 MailShield Hybrid Security is a deep-learning based email security project for `normal / anomaly / spam` detection on web hosting email logs.
 
-The project was developed as part of a master's thesis on anomaly and spam detection in hosting environments using a hybrid deep learning model.
+It is structured as a research-oriented implementation and evaluation environment for hosting email security analytics.
 
 ## Architecture
 - Temporal branch: `GRU`
@@ -14,7 +14,7 @@ The project was developed as part of a master's thesis on anomaly and spam detec
 - Log parsers for hosting email workflows
 - Model training and evaluation pipeline
 - REST API for scoring
-- Figure generation for thesis/reporting
+- Figure generation for reporting and comparative analysis
 - Synthetic log generator for reproducible public demos
 
 ## Setup
@@ -48,7 +48,7 @@ Run API:
 mailshield-api --model-dir ./artifacts/latest --host 0.0.0.0 --port 8000
 ```
 
-Generate thesis/report figures:
+Generate evaluation/report figures:
 ```bash
 pip install -e .[report]
 mailshield-thesis-figures \
@@ -71,7 +71,7 @@ mailshield-generate-synth \
 
 ## Documentation
 - Results summary: [docs/THESIS_RESULTS_FINAL_EN.md](docs/THESIS_RESULTS_FINAL_EN.md)
-- Figure captions: [docs/THESIS_FIGURE_TEXT_FINAL_EN.md](docs/THESIS_FIGURE_TEXT_FINAL_EN.md)
+- Figure captions and interpretation notes: [docs/THESIS_FIGURE_TEXT_FINAL_EN.md](docs/THESIS_FIGURE_TEXT_FINAL_EN.md)
 - Turkish results summary: [docs/THESIS_RESULTS_FINAL_TR.md](docs/THESIS_RESULTS_FINAL_TR.md)
 - Turkish figure captions: [docs/THESIS_FIGURE_TEXT_FINAL_TR.md](docs/THESIS_FIGURE_TEXT_FINAL_TR.md)
 
