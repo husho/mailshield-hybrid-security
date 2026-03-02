@@ -8,3 +8,8 @@ artifacts/
 Logs/
 Logs.zip
 sample_data/
+output/
+scripts/add_github_link_to_thesis.py
+scripts/update_thesis_docx.py
+scripts/finalize_thesis_docx.py
+scripts/extract_table_figure_lists.py

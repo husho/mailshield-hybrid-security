@@ -1,32 +1,31 @@
 # MailShield Hybrid Security
 
-Deep-learning tabanli hibrit bir e-posta guvenlik sistemi: hosting ortamlarindaki loglardan `normal / anomaly / spam` siniflandirmasi yapar.
+MailShield Hybrid Security is a deep-learning based email security project for `normal / anomaly / spam` detection on web hosting email logs.
 
-## Akademik Baglam
-Bu repository, yuksek lisans tez calismasi kapsaminda gelistirilmistir:
+The project was developed as part of a master's thesis on anomaly and spam detection in hosting environments using a hybrid deep learning model.
 
-**"Web hosting ortamlarinda e-posta trafigi uzerinden anomali ve spam tespiti icin derin ogrenme tabanli bir hibrit guvenlik modeli gelistirilmesi ve performans analizi."**
+## Architecture
+- Temporal branch: `GRU`
+- Structural branch: `MLP`
+- Input sources: `SMTP`, `MTA`, `MTAFILTER` logs
+- Output classes: `normal`, `anomaly`, `spam`
 
-Tez gereksinimi nedeniyle model cekirdegi derin ogrenme tabanlidir:
-- Zamansal davranis kolu: `GRU`
-- Yapisal/istatistiksel ozellik kolu: `MLP`
-- Hibrit karar: iki kolun birlestirilmis ciktilari
+## Features
+- Log parsers for hosting email workflows
+- Model training and evaluation pipeline
+- REST API for scoring
+- Figure generation for thesis/reporting
+- Synthetic log generator for reproducible public demos
 
-## Proje Kapsami
-- Gercek hosting log formatlari ile uyumlu parser (`SMTP`, `MTA`, `MTAFILTER`)
-- Egitim, degerlendirme ve REST API cikisi
-- Tez icin otomatik performans grafik uretimi
-- Gercek loglarin acik paylasilmadigi durumlar icin sentetik veri uretici
-
-## Kurulum
+## Setup
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
 ```
 
-## Hizli Kullanim
-Egitim:
+## Quick Start
+Train:
 ```bash
 mailshield-train \
   --logs-dir "./Logs" \
@@ -36,7 +35,7 @@ mailshield-train \
   --epochs 5
 ```
 
-Degerlendirme:
+Evaluate:
 ```bash
 mailshield-eval \
   --logs-dir ./Logs \
@@ -44,7 +43,12 @@ mailshield-eval \
   --output-dir ./artifacts/full-20260225/eval
 ```
 
-Tez grafikleri:
+Run API:
+```bash
+mailshield-api --model-dir ./artifacts/latest --host 0.0.0.0 --port 8000
+```
+
+Generate thesis/report figures:
 ```bash
 pip install -e .[report]
 mailshield-thesis-figures \
@@ -53,14 +57,9 @@ mailshield-thesis-figures \
   --output-dir ./artifacts/full-20260225/figures
 ```
 
-API:
-```bash
-mailshield-api --model-dir ./artifacts/latest --host 0.0.0.0 --port 8000
-```
-
-## Veri ve Gizlilik
-- Gercek uretim loglari bu repoda bilincli olarak yer almaz.
-- Acik repoda tekrar uretilebilirlik icin sentetik log uretici bulunur:
+## Data and Privacy
+- Real production logs are intentionally excluded from the public repository.
+- A synthetic MailEnable-like log generator is included for reproducibility:
 ```bash
 mailshield-generate-synth \
   --output-dir ./sample_data/synthetic-logs \
@@ -68,17 +67,13 @@ mailshield-generate-synth \
   --days 14 \
   --events-per-day 1000
 ```
-- Hassas alanlar (email/domain/IP) hashlenerek islenir.
+- Sensitive identifiers such as email, domain, and IP fields are processed in hashed form.
 
-## Dokumantasyon
-- Tez sonuclari (TR): [docs/THESIS_RESULTS_FINAL_TR.md](docs/THESIS_RESULTS_FINAL_TR.md)
-- Thesis results (EN): [docs/THESIS_RESULTS_FINAL_EN.md](docs/THESIS_RESULTS_FINAL_EN.md)
-- Sekil aciklamalari (TR): [docs/THESIS_FIGURE_TEXT_FINAL_TR.md](docs/THESIS_FIGURE_TEXT_FINAL_TR.md)
-- Figure captions (EN): [docs/THESIS_FIGURE_TEXT_FINAL_EN.md](docs/THESIS_FIGURE_TEXT_FINAL_EN.md)
-- Tez tamamlama plani (TR): [docs/THESIS_COMPLETION_PLAN_TR.md](docs/THESIS_COMPLETION_PLAN_TR.md)
-- Thesis completion plan (EN): [docs/THESIS_COMPLETION_PLAN_EN.md](docs/THESIS_COMPLETION_PLAN_EN.md)
-- Public repo rehberi (TR): [docs/PUBLIC_GITHUB_GUIDE_TR.md](docs/PUBLIC_GITHUB_GUIDE_TR.md)
-- Public release guide (EN): [docs/PUBLIC_GITHUB_GUIDE_EN.md](docs/PUBLIC_GITHUB_GUIDE_EN.md)
+## Documentation
+- Results summary: [docs/THESIS_RESULTS_FINAL_EN.md](docs/THESIS_RESULTS_FINAL_EN.md)
+- Figure captions: [docs/THESIS_FIGURE_TEXT_FINAL_EN.md](docs/THESIS_FIGURE_TEXT_FINAL_EN.md)
+- Turkish results summary: [docs/THESIS_RESULTS_FINAL_TR.md](docs/THESIS_RESULTS_FINAL_TR.md)
+- Turkish figure captions: [docs/THESIS_FIGURE_TEXT_FINAL_TR.md](docs/THESIS_FIGURE_TEXT_FINAL_TR.md)
 
-## Lisans
-Bu proje `MIT License` ile lisanslanmistir. Ayrintilar icin [LICENSE](LICENSE) dosyasina bakin.
+## License
+This project is licensed under the [MIT License](LICENSE).
